@@ -58,7 +58,7 @@ function panels() {
 
 	// portfolio panel
     $("#portfolio1").on('click', function() {
-    	$("body").addClass("no-scroll");
+    	//$("body").addClass("no-scroll");
         $('.panel1').animate({
             'width': 'show'
         }, 1000, function() {
@@ -106,7 +106,7 @@ function panels() {
         });
     });	
     $('.closeicon1').on('click', function() {
-        $('.panel1 .work1').fadeOut(500, function() {
+        $('.panel1 .work1').fadeIn(500, function() {
         	$("body").removeClass("no-scroll");
             $('.panel1').animate({
                 'width': 'hide'
@@ -114,7 +114,7 @@ function panels() {
         });
     });
 	$('.closeicon2').on('click', function() {
-        $('.panel2 .work2').fadeOut(500, function() {
+        $('.panel2 .work2').fadeIn(500, function() {
         	$("body").removeClass("no-scroll");
             $('.panel2').animate({
                 'width': 'hide'
@@ -122,7 +122,7 @@ function panels() {
         });
     });
 	$('.closeicon3').on('click', function() {
-        $('.panel3 .work3').fadeOut(500, function() {
+        $('.panel3 .work3').fadeIn(500, function() {
         	$("body").removeClass("no-scroll");
             $('.panel3').animate({
                 'width': 'hide'
@@ -130,7 +130,7 @@ function panels() {
         });
     });
 	    $('.closeicon4').on('click', function() {
-        $('.panel4 .work4').fadeOut(500, function() {
+        $('.panel4 .work4').fadeIn(500, function() {
         	$("body").removeClass("no-scroll");
             $('.panel4').animate({
                 'width': 'hide'
@@ -138,7 +138,7 @@ function panels() {
         });
     });
 	$('.closeicon5').on('click', function() {
-        $('.panel5 .work5').fadeOut(500, function() {
+        $('.panel5 .work5').fadeIn(500, function() {
         	$("body").removeClass("no-scroll");
             $('.panel5').animate({
                 'width': 'hide'
@@ -146,7 +146,7 @@ function panels() {
         });
     });
 	$('.closeicon6').on('click', function() {
-        $('.panel6 .work6').fadeOut(500, function() {
+        $('.panel6 .work6').fadeIn(500, function() {
         	$("body").removeClass("no-scroll");
             $('.panel6').animate({
                 'width': 'hide'
