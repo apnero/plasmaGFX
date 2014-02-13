@@ -39,7 +39,7 @@
 				renderer.domElement.style.position = "relative";
 				$("graphix").appendChild( renderer.domElement );
 
-				$( "start" ).addEventListener( 'click', onStartClick, false );
+				//$( "start" ).addEventListener( 'click', onStartClick, false );
 
 				var callbackProgress = function( progress, result ) {
 

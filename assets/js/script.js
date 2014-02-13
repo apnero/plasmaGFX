@@ -66,7 +66,7 @@ function panels() {
         });
     });
    $("#portfolio2").on('click', function() {
-    	$("body").addClass("no-scroll");
+    	//$("body").addClass("no-scroll");
         $('.panel2').animate({
             'width': 'show'
         }, 1000, function() {
@@ -74,7 +74,7 @@ function panels() {
         });
     });
     $("#portfolio3").on('click', function() {
-    	$("body").addClass("no-scroll");
+    	//$("body").addClass("no-scroll");
         $('.panel3').animate({
             'width': 'show'
         }, 1000, function() {
@@ -82,7 +82,7 @@ function panels() {
         });
     });	
 	    $("#portfolio4").on('click', function() {
-    	$("body").addClass("no-scroll");
+    	//$("body").addClass("no-scroll");
         $('.panel4').animate({
             'width': 'show'
         }, 1000, function() {
@@ -90,7 +90,7 @@ function panels() {
         });
     });
    $("#portfolio5").on('click', function() {
-    	$("body").addClass("no-scroll");
+    	//$("body").addClass("no-scroll");
         $('.panel5').animate({
             'width': 'show'
         }, 1000, function() {
@@ -98,7 +98,7 @@ function panels() {
         });
     });
     $("#portfolio6").on('click', function() {
-    	$("body").addClass("no-scroll");
+    	//$("body").addClass("no-scroll");
         $('.panel6').animate({
             'width': 'show'
         }, 1000, function() {
