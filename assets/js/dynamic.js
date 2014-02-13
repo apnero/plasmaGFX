@@ -18,7 +18,6 @@
 
 			var fov = 70,
 			isUserInteracting = false,
-			onMouseDownMouseX = 0, onMouseDownMouseY = 0,
 			lon = 0, onMouseDownLon = 0,
 			lat = 0, onMouseDownLat = 0,
 			phi = 0, theta = 0;
@@ -143,9 +142,7 @@ var sc = 50;
 					scene.add( x );  
 				});	
 
-				document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-				document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
-				document.addEventListener( 'DOMMouseScroll', onDocumentMouseWheel, false);
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 				window.addEventListener( 'resize', onWindowResized, false );
 
 				onWindowResized( null );
@@ -158,60 +155,15 @@ var sc = 50;
 				camera.projectionMatrix.makePerspective( fov, window.innerWidth / window.innerHeight, 1, 1100 );
 			}
 
-			function onDocumentMouseDown( event ) {
-
-				event.preventDefault();
-
-				onPointerDownPointerX = event.clientX;
-				onPointerDownPointerY = event.clientY;
-
-				onPointerDownLon = lon;
-				onPointerDownLat = lat;
-
-				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-				document.addEventListener( 'mouseup', onDocumentMouseUp, false );
-
-			}
 
 			function onDocumentMouseMove( event ) {
 
-				lon = ( event.clientX - onPointerDownPointerX ) * 0.1 + onPointerDownLon;
-				lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+								lon = ( event.clientX - window.innerWidth/4 );
+				lat = ( event.clientY -window.innerHeight/4 );
 
 			}
 
-			function onDocumentMouseUp( event ) {
 
-				document.removeEventListener( 'mousemove', onDocumentMouseMove, false );
-				document.removeEventListener( 'mouseup', onDocumentMouseUp, false );
-
-			}
-
-			function onDocumentMouseWheel( event ) {
-
-				// WebKit
-
-				if ( event.wheelDeltaY ) {
-
-					fov -= event.wheelDeltaY * 0.05;
-
-				// Opera / Explorer 9
-
-				} else if ( event.wheelDelta ) {
-
-					fov -= event.wheelDelta * 0.05;
-
-				// Firefox
-
-				} else if ( event.detail ) {
-
-					fov += event.detail * 1.0;
-
-				}
-
-				camera.projectionMatrix.makePerspective( fov, window.innerWidth / window.innerHeight, 1, 1100 );
-
-			}
 
 			function animate() {
 
@@ -232,33 +184,33 @@ var sc = 50;
 
 
 				torus.position.x = Math.sin( time * 0.001 + 4 ) * 30;
-				torus.position.y = Math.sin( time * 0.0011 + 4 ) * 30 -30;
+				torus.position.y = Math.sin( time * 0.0011 + 4 ) * 30 -20;
 				torus.position.z = Math.sin( time * 0.0012 + 4 ) * 30;
 
 				torus.rotation.x += Math.PI/90;
 				torus.rotation.y += Math.PI/90;
 
-				p.position.x = Math.sin( time * 0.001  ) -80;
+				p.position.x = Math.sin( time * 0.001  )*30-60;
 				p.rotation.x += Math.PI/90;
 				p.rotation.y += Math.PI/90;
 				
-				l.position.x = Math.sin( time * 0.001  ) * 30 -80;
+				l.position.x = Math.sin( time * 0.001  ) * 30-30;
 				l.rotation.x += Math.PI/90;
 				l.rotation.y += Math.PI/90;
 
-				a.position.x = Math.sin( time * 0.001   ) * 60 -80;
+				a.position.x = Math.sin( time * 0.001   ) * 30;
 				a.rotation.x += Math.PI/90;
 				a.rotation.y += Math.PI/90;
 
-				s.position.x = Math.sin( time * 0.001  ) * 90 -80;
+				s.position.x = Math.sin( time * 0.001  ) * 30+30
 				s.rotation.x += Math.PI/90;
 				s.rotation.y += Math.PI/90;
 
-				m.position.x = Math.sin( time * 0.001  ) * 120 -80;
+				m.position.x = Math.sin( time * 0.001  ) * 30+60 ;
 				m.rotation.x += Math.PI/90;
 				m.rotation.y += Math.PI/90;
 
-				a2.position.x = Math.sin( time * 0.001 ) * 150 -80;
+				a2.position.x = Math.sin( time * 0.001 ) *30+90;
 				a2.rotation.x += Math.PI/90;
 				a2.rotation.y += Math.PI/90;
 				
@@ -266,27 +218,27 @@ var sc = 50;
 				g.rotation.x += Math.PI/90;
 				g.rotation.y += Math.PI/90;
 
-				r.position.x = Math.sin( time * 0.001  ) * 60-30;
+				r.position.x = Math.sin( time * 0.001  ) * 30;
 				r.rotation.x += Math.PI/90;
 				r.rotation.y += Math.PI/90;
 
-				a3.position.x = Math.sin( time * 0.001 ) * 90-30;
+				a3.position.x = Math.sin( time * 0.001 ) * 30+30;
 				a3.rotation.x += Math.PI/90;
 				a3.rotation.y += Math.PI/90;				
 				
-				p2.position.x = Math.sin( time * 0.001  ) * 120-30;
+				p2.position.x = Math.sin( time * 0.001  ) * 30+60;
 				p2.rotation.x += Math.PI/90;
 				p2.rotation.y += Math.PI/90;
 
-				h.position.x = Math.sin( time * 0.001  ) * 150-30;
+				h.position.x = Math.sin( time * 0.001  ) * 30+90;
 				h.rotation.x += Math.PI/90;
 				h.rotation.y += Math.PI/90;
 
-				i.position.x = Math.sin( time * 0.001 ) * 180-30;
+				i.position.x = Math.sin( time * 0.001 ) *30+120;
 				i.rotation.x += Math.PI/90;
 				i.rotation.y += Math.PI/90;
 
-				x.position.x = Math.sin( time * 0.001 ) *210-30;
+				x.position.x = Math.sin( time * 0.001 ) *30+150;
 				x.rotation.x += Math.PI/90;
 				x.rotation.y += Math.PI/90;
 
