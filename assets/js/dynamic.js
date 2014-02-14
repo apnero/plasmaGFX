@@ -158,8 +158,8 @@ var sc = 50;
 
 			function onDocumentMouseMove( event ) {
 
-								lon = ( event.clientX - window.innerWidth/4 );
-				lat = ( event.clientY -window.innerHeight/4 );
+								lon = ( event.clientX - window.innerWidth/8 );
+				lat = ( event.clientY -window.innerHeight/8 );
 
 			}
 
